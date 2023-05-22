@@ -20,13 +20,10 @@ int main(int argc, char **argv)
    
     std_msgs::Float32 float_msg;    //create new object called msg from std_msg
 
-    std::float_t ss;       //data sent through ssstream
     float_msg.data = count;
-    // msg.data = ss.str();   //sending str msgs through ss and converting str and integer count to str
-
+    
     ROS_INFO("%f",float_msg.data);  // fn to show (print) what is inside the node on terminal after converting to str
-    // ROS_INFO("%f",count); 
-
+    
    
     chatter_pub.publish(float_msg);   //chatter_pub that i created to pub my msg that i created
 

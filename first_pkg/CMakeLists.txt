@@ -201,10 +201,28 @@ include_directories(
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
+
+### publishers ###
+
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
 add_executable(float_talker src/float_talker.cpp)
 target_link_libraries(float_talker ${catkin_LIBRARIES})
+
+add_executable(int_talker src/int_talker.cpp)
+target_link_libraries(int_talker ${catkin_LIBRARIES})
+
+add_executable(int_talker_hw src/int_talker_hw.cpp)
+target_link_libraries(int_talker_hw ${catkin_LIBRARIES})
+
+add_executable(turtle_forward src/turtle_forward.cpp)
+target_link_libraries(turtle_forward ${catkin_LIBRARIES})
+
+#############
+### subscribers ###
+
+add_executable(listener src/listener.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

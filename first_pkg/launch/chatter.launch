@@ -1,0 +1,8 @@
+<launch>
+
+    <node name="publisher" pkg="first_pkg" type="talker" />
+    <node name="subscriber" pkg="first_pkg" type="listener" />
+    <!-- <node name="publisher" pkg="first_pkg" type="talker.py" />
+    <node name="subscriber" pkg="first_pkg" type="listener.py" /> -->
+
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+
+    <node name="publisher" pkg="first_pkg" type="talker" />
+
+
+</launch>
