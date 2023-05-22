@@ -1,8 +1,6 @@
 #include "ros/ros.h"        //including for the ros library
 #include "std_msgs/Float32.h"    // include for the msg type that we used
 
-#include <sstream> 
-
 int main(int argc, char **argv)
 {
    ros::init(argc, argv, "float_talker");  //initialize ros node , contain the node name talker

@@ -224,5 +224,11 @@ target_link_libraries(turtle_forward ${catkin_LIBRARIES})
 
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
+
+add_executable(int_listener src/int_listener.cpp)
+target_link_libraries(int_listener ${catkin_LIBRARIES})
+
+add_executable(float_listener src/float_listener.cpp)
+target_link_libraries(float_listener ${catkin_LIBRARIES})
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

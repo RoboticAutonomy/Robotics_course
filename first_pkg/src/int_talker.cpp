@@ -1,7 +1,5 @@
 #include "ros/ros.h"        //including for the ros library
 #include "std_msgs/Int32.h"    // include for the msg type that we used
-#include <iostream>
-using namespace std;
 
 int main(int argc, char **argv)
 {
@@ -30,7 +28,7 @@ int main(int argc, char **argv)
 
     int_msg.data = count;
     
-    ROS_INFO("%i",int_msg.data);  // fn to show (print) what is inside the node on terminal after converting to str
+    ROS_INFO("%d",int_msg.data);  // fn to show (print) what is inside the node on terminal after converting to str
     
     
    
