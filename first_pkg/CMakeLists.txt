@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -47,11 +48,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  Age.msg
+  # Message2.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -68,10 +69,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -105,7 +106,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES first_pkg
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+ CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -219,6 +220,9 @@ target_link_libraries(int_talker_hw ${catkin_LIBRARIES})
 add_executable(turtle_forward src/turtle_forward.cpp)
 target_link_libraries(turtle_forward ${catkin_LIBRARIES})
 
+add_executable(age_pub_node src/age_pub_node.cpp)
+target_link_libraries(age_pub_node ${catkin_LIBRARIES})
+
 #############
 ### subscribers ###
 
@@ -230,5 +234,17 @@ target_link_libraries(int_listener ${catkin_LIBRARIES})
 
 add_executable(float_listener src/float_listener.cpp)
 target_link_libraries(float_listener ${catkin_LIBRARIES})
+
+add_executable(pose_topic_subscriber src/pose_topic_subscriber.cpp)
+target_link_libraries(pose_topic_subscriber ${catkin_LIBRARIES})
+
+add_executable(age_sub_node  src/age_sub_node.cpp)
+target_link_libraries(age_sub_node ${catkin_LIBRARIES})
+
+######################
+### publishers and subscribers ###
+
+add_executable(data_conv src/data_conv.cpp)
+target_link_libraries(data_conv ${catkin_LIBRARIES})
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

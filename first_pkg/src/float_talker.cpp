@@ -1,6 +1,8 @@
 #include "ros/ros.h"        //including for the ros library
 #include "std_msgs/Float32.h"    // include for the msg type that we used
 
+float count = 0; 
+
 int main(int argc, char **argv)
 {
    ros::init(argc, argv, "float_talker");  //initialize ros node , contain the node name talker
@@ -12,7 +14,7 @@ int main(int argc, char **argv)
   ros::Rate loop_rate(10);
 
   
-  float count = 0;   //create counter
+    //create counter
   while (ros::ok())
   {
    
