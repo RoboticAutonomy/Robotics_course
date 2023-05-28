@@ -1,0 +1,7 @@
+<launch>
+
+    
+    <node name="pose_topic_subscriber" pkg="first_pkg" type="pose_topic_subscriber" />
+
+
+</launch>

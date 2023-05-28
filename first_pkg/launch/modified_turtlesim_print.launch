@@ -1,0 +1,9 @@
+<launch>
+
+    
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" />
+    <node name="turtle_telop_key" pkg="turtlesim" type="turtle_teleop_key" />
+    <include file="$(find first_pkg)/launch/pose_topic_subscriber.launch" />
+
+
+</launch>
