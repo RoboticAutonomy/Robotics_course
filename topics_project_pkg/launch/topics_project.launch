@@ -1,0 +1,6 @@
+<launch>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_wall_world.launch" />
+    <node name="topics_project_node" pkg="topics_project_pkg" type="topics_project_node" />
+        
+</launch>
